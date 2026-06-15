@@ -4,6 +4,28 @@
   <base href="/youchien-app/">
 
   <meta charset="UTF-8">
+  <script>
+    // 1. 古いService Workerをすべて強制アンインストール
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.unregister().then(function() {
+            console.log('Old Service Worker successfully unregistered.');
+          });
+        }
+      });
+    }
+
+    // 2. Service Workerが作成した強力なキャッシュ(Cache Storage)を全削除
+    if ('caches' in window) {
+      caches.keys().then(function(keyList) {
+        return Promise.all(keyList.map(function(key) {
+          console.log('Deleting cache: ' + key);
+          return caches.delete(key);
+        }));
+      });
+    }
+  </script>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
