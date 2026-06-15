@@ -96027,9 +96027,16 @@ break}n=g[o]
 for(m=0;m<q;++m){l=f[m]
 k=l.b
 j=!0
-if(!B.c.n(k,n))if(!B.c.n(n,k)){k=l.a
-k=B.c.n(k,n)||B.c.n(n,k)}else k=j
-else k=j
+if(!B.c.n(k,n))if(!B.c.n(n,k)){j=l.a
+j=B.c.n(j,n)||B.c.n(n,j)}if(j){p=s
+break}if(B.c.n(n,"\u5c11"))j=B.c.n(k,"\u5c11")||B.c.n(l.a,"\u5c11")
+else j=!1
+if(j){p=s
+break}if(B.c.n(n,"\u4e2d"))j=B.c.n(k,"\u4e2d")||B.c.n(l.a,"\u4e2d")
+else j=!1
+if(j){p=s
+break}if(B.c.n(n,"\u9577"))k=B.c.n(k,"\u9577")||B.c.n(l.a,"\u9577")
+else k=!1
 if(k){p=s
 break}}if(p){s=p
 break}++o}}i=B.c.n(a.c,"\u5348\u5f8c\u4fdd\u80b2")
